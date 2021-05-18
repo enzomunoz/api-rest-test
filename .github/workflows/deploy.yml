@@ -1,0 +1,23 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credential: false
+
+      - name: Install and Build
+        run: |
+          java -version
+      - name: Deploy
+        uses: enzomunoz/api-rest-test
+        with:
+          GITHUB_TOKEN: ${{ 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 }}
+          BRANCH: test
+          FOLDER: test
