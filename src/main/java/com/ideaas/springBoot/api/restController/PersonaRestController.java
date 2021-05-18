@@ -21,7 +21,7 @@ public class PersonaRestController {
         this.personaService = personaService;
     }
 
-    @GetMapping("/list")
+    @GetMapping("/listt")
     public ResponseEntity<List<Persona>> findAll(){
         List<Persona> personas= personaService.findAll();
 
